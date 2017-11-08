@@ -1,0 +1,19 @@
+{
+  "name": "lab_3",
+  "version": "1.0.0",
+  "description": "Lab 3 package to manage dependencies",
+  "main": "express_routes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tony Cotta",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "fs": "0.0.1-security",
+    "pug": "^2.0.0-rc.4",
+    "url": "^0.11.0",
+    "xml2js": "^0.4.19"
+  }
+}

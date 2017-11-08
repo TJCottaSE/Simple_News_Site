@@ -1,0 +1,18 @@
+html
+        head
+                title New News Articles
+        body
+                form(method='POST' action='/NewNews/News')
+                        p
+                        | Username:<br/>
+                        input(type='text' name='userName' cols='50' required)
+                        |<br/>User Role:
+                        <tab indent=26>
+                        |Subscriber 
+                        input(type='radio' name='userRole' value='Subscriber')
+                        <tab indent=6>
+                        |Reporter 
+                        input(type='radio' name='userRole' value='Reporter' checked)
+                        |<br/>
+                        input(type='submit' value='Login')
+                        |<br/>

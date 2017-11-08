@@ -1,0 +1,24 @@
+html  
+    head
+        title New News Articles
+    body
+        header
+            h2 Welcome #{user}, you are currently browsing with #{privledges} privledges
+            // Login Button
+            form(method='POST' action='/NewNews/Logger')
+                input(type='submit', value='Logout', name='Logger')
+
+        section
+            h3 Create Story
+            form(method='POST' action='/NewNews/News/added')
+                div() Title:
+                input(type='text' name='title' required='' cols='50')
+                div() Article Visibility: 
+                    = ' '
+                    | Public
+                    input(type='radio' name='visibility' value='T')
+                    | Private
+                    input(type='radio' name='visibility' value='F' checked='')
+                textarea(name='article' rows='20' cols='85' required='')
+                div() 
+                input(value='submit' type='submit')

@@ -1,0 +1,16 @@
+html  
+    head
+        title New News Articles
+    body
+        header
+            h2 Welcome #{user}, you are currently browsing with #{privledges} privledges
+            // Login Button
+            form(method='POST' action='/NewNews/Logger')
+                if loggedIn == 'false'
+                    input(type='submit', value='Login', name='Logger')
+                else
+                    input(type='submit', value='Logout', name='Logger')
+            p
+            h3 #{stories[0]['TITLE']} 
+            |by #{stories[0]['AUTHOR']}
+            p #{stories[0]['CONTENT']}

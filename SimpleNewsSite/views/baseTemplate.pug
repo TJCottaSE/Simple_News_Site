@@ -1,0 +1,25 @@
+html  
+    head
+        title New News Articles
+    body
+        header
+            h2 Welcome #{user}, you are currently browsing with #{privledges} privledges
+            // Login Button
+            form(method='POST' action='/NewNews/Logger')
+                if loggedIn == 'false'
+                    input(type='submit', value='Login', name='Logger')
+                    //input(type='hidden', name='Logger', value='Login')
+                else
+                    input(type='submit', value='Logout', name='Logger')
+                    //input(type='hidden', name='Logger', value='Logout')
+        section
+            if privledges == 'Reporter'
+                a(href='/NewNews/add' value='Create Story') Create Story
+            p Todays News Stories
+            ul
+                for story in stories
+                    li
+                        a(href='/NewNews/view?Title=' + story['TITLE']) #{story['TITLE']}
+                        if (privledges == 'Reporter' && user == story['AUTHOR'])
+                            a(href='/NewNews/delete?Title=' + story['TITLE'])
+                                input( type='submit' value='delete')
